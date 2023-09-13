@@ -5,7 +5,7 @@ import { message } from "antd";
 function App() {
   const [scrapeMSG, setscrapeMSG] = useState("");
   const [link, setLink] = useState("");
-  const [image, setImage] = useState("https://placehold.co/600x400.png");
+  const [image, setImage] = useState("https://placehold.co/600x400/orange/white?text=Screen+appears+here");
   const [error, setError] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -45,7 +45,7 @@ function App() {
       } catch (e) {
         setLoading(false); 
         console.log('Error: ', e);
-        message.error(e)
+        message.error({content: e, duration: 5})
         // message.error({ content: 'An error occurred at the server', duration: 3 }); // Display an error message
       }
     }
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-6">Welcome to Steves-bet bot!</h1>
+      <h1 className="text-3xl font-bold mb-6">Welcome to Steves-screenshoter bot!</h1>
 
 
       <form
